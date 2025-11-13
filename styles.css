@@ -307,6 +307,15 @@ section h2 {
   transition: transform 0.2s cubic-bezier(.4,2,.6,1), box-shadow 0.2s;
 }
 
+/* Ensure cards stretch to the same height and push the CTA to the bottom */
+.cards {
+  align-items: stretch;
+}
+
+.card {
+  height: 100%;
+}
+
 .card:hover, .card:focus-within {
   transform: translateY(-8px) scale(1.025);
   box-shadow: 0 8px 32px #0004;
@@ -315,6 +324,11 @@ section h2 {
 
 .card .content {
   padding: 14px;
+}
+
+/* Make main content grow to fill card so CTA sits at bottom */
+.card .content {
+  flex: 1 1 auto;
 }
 
 .card h3 {
@@ -334,6 +348,8 @@ section h2 {
   border-radius: 10px;
   padding: .55rem .8rem;
   font-weight: 700;
+  /* visually separate CTA and ensure consistent placement */
+  align-self: stretch;
 }
 
 /* Skills Section */
