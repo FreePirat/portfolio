@@ -824,6 +824,8 @@ footer {
   position: relative;
   margin-top: 1.5rem;
   grid-auto-rows: auto;
+  /* ensure grid items stretch to equal heights within the same row */
+  align-items: stretch;
 }
 
 /* Hide the vertical timeline decoration by default (desktop uses card grid) */
@@ -840,6 +842,10 @@ footer {
   box-shadow: var(--shadow);
   transition: transform 0.22s ease, box-shadow 0.22s ease;
   margin: 0;
+  /* make each job card a column flex container and fill its grid cell height */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .job:hover {
